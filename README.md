@@ -16,7 +16,7 @@ This can be especially useful when using replay functions on platforms like Trad
 
 To run this script, you need the following Python packages:
 
-\`\`\`bash
+```bash
 pip install undetected-chromedriver
 pip install selenium
 pip install tabulate
@@ -25,7 +25,7 @@ pip install matplotlib
 pip install pickle
 pip install redis
 pip install seaborn
-\`\`\`
+```
 
 ### 🗄️ Redis for Caching
 
@@ -41,9 +41,9 @@ Ensure Redis is running on your machine before running the script.
 
 The script uses Chrome via \`undetected-chromedriver\` for scraping. The path to Chrome may differ depending on your operating system. If you are not using Windows or if Chrome is installed in a different location, you may need to update the \`chrome_path\` variable in the script:
 
-\`\`\`python
+```python
 chrome_path = "/path/to/your/chrome/executable"
-\`\`\`
+```
 
 ## 🚀 Usage
 
