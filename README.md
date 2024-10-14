@@ -1,77 +1,61 @@
-
 # 🚀 FXBacktestBoost - Forex Market Data Scraping & Analysis Script
 
 ## 📝 Overview
 
-This script is designed to assist with backtesting by allowing you to analyze historical market data and news events as if they were live.
-This can be especially useful when using replay functions on platforms like TradingView or FXReplay.com.
+FXBacktestBoost helps you analyze historical market data and news events in sync, enhancing your backtesting experience. It's perfect for platforms like TradingView or FXReplay.com, giving you a live market feel when replaying past market conditions.
 
 ### ✨ Key Features:
-- **Date Synchronization**: Automatically traverses dates within a specified range and fetches data for each day (and uses cache for multiple requests)
-- **Data Filtering**: Filters events based on desired currencies and impact levels.
-- **Comprehensive Output**: Presents filtered data in a table format, including date, time, currency, impact, event name, actual, forecast, and previous values.
-- **Backtesting Enhancement**: Ideal for boosting your backtesting experience by providing historical context in sync with market data.
+- **Automatic Date Sync**: Easily traverse through date ranges and automatically fetch market and news data for each day. Cached results speed up repeated requests.
+- **Custom Filters**: Filter news events by specific currencies and impact levels.
 
 ## 📦 Requirements
 
-To run this script, you need the following Python packages:
+You'll need the following Python packages:
 
 ```bash
-pip install undetected-chromedriver
-pip install selenium
-pip install tabulate
-pip install pandas
-pip install matplotlib
-pip install pickle
-pip install redis
-pip install seaborn
+pip install undetected-chromedriver selenium tabulate pandas matplotlib pickle redis seaborn
 ```
 
 ### 🗄️ Redis for Caching
 
-Caching is implemented via Redis to enhance performance, especially for repeated data fetches.
-To install Redis, follow the official installation guides:
+The script uses Redis to store and quickly retrieve data. You can install Redis by following these official guides:
 
 - [Redis Installation Guide](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/)
-- [Redis Windows Download](https://github.com/microsoftarchive/redis/releases)
+- [Redis for Windows](https://github.com/microsoftarchive/redis/releases)
 
 Ensure Redis is running on your machine before running the script.
 
-### 🛠️ ChromeDriver Path
+### 🛠️ ChromeDriver Setup
 
-The script uses Chrome via \`undetected-chromedriver\` for scraping. The path to Chrome may differ depending on your operating system. If you are not using Windows or if Chrome is installed in a different location, you may need to update the \`chrome_path\` variable in the script:
+The script uses Chrome via `undetected-chromedriver` for scraping. If Chrome is installed in a custom location, update the `chrome_path` in the script:
 
 ```python
 chrome_path = "/path/to/your/chrome/executable"
 ```
 
-## 🚀 Usage
+## 🚀 How to Use
 
-To use this script, follow these steps:
-
-1. **Set Date Range**: Manually set the `start_date` and `end_date` in the script
-2. **Configure Filters**: Set the desired currencies and impact levels for scraping news data
-3. **Define Forex Pairs**: Specify the forex pairs you want to analyze for correlation, ordered alphabetically
-4. **Set Resampling Timeframe**: Define the timeframe for resampling the forex data. The `new_timeframe` variable can be set to different values, such as:
-   
-   - `'1min'`: Resample to 1-minute intervals
-   - `'5min'`: Resample to 5-minute intervals
-   - `'15min'`: Resample to 15-minute intervals
-   - `'30min'`: Resample to 30-minute intervals
-   - `'1h'`: Resample to 1-hour intervals
-   - `'4h'`: Resample to 4-hour intervals (default)
+1. **Set Date Range**: Define `start_date` in the script. The script automatically pulls data for 7 days before the start date by default (correlation matrix).
+2. **Customize Filters**: Specify the currencies and impact levels you want to analyze.
+3. **Define Forex Pairs**: Add the forex pairs (in alphabetical order) for correlation analysis.
+4. **Choose a Timeframe**: Set the resampling interval for the market data. Adjust the `new_timeframe` variable to one of the following:
+   - `'1min'`: 1-minute intervals
+   - `'5min'`: 5-minute intervals
+   - `'15min'`: 15-minute intervals
+   - `'30min'`: 30-minute intervals
+   - `'1h'`: 1-hour intervals
+   - `'4h'`: 4-hour intervals (default)
 
 5. **Run the Script**
 
 ### 💡 Contributing
 
-New requests and functionality are always welcome! If you have ideas for improvements, feel free to open an issue or submit a pull request.
+If you have ideas or want to add features, feel free to open an issue or submit a pull request!
 
 ## ⚠️ Legal Disclaimer
 
-- **ForexFactory.com**: This script is not affiliated with ForexFactory.com. Scraping data from ForexFactory.com is against their Terms of Service. By using this script, you agree to take full responsibility for any consequences arising from such use.
-- **No Liability**: The author of this script assumes no liability for any outcomes related to the use of this script. Use it at your own risk.
+- **ForexFactory.com**: This script is not affiliated with ForexFactory.com, and scraping their data may violate their Terms of Service. Use at your own discretion and responsibility.
 
 ## 📄 License
 
-This script is released under the **MIT License**. This license is a permissive open-source license that is simple and easy to understand. It places very few restrictions on reuse and is generally accepted in the open-source community.
+This project is released under the **MIT License**, meaning it's open-source with very few restrictions on usage and modification.
