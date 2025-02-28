@@ -13,7 +13,7 @@ FXBacktestBoost helps you analyze historical market data and news events in sync
 You'll need the following Python packages:
 
 ```bash
-pip install undetected-chromedriver selenium tabulate pandas matplotlib pickle redis seaborn
+pip install undetected-chromedriver selenium tabulate pandas matplotlib redis seaborn
 ```
 
 ### 🗄️ Redis for Caching

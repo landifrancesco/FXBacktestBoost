@@ -1,0 +1,10 @@
+datetime
+findatapy
+selenium
+tabulate
+matplotlib
+numpy
+pandas
+redis
+seaborn
+undetected-chromedriver
